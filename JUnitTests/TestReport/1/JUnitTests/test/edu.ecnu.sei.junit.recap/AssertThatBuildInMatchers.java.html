@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AssertThatBuildInMatchers.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">InterestingCoverageMetricInstruction (2018-11-16 12:42:03)</a> &gt; <a href="../../index.html" class="el_group">JUnitTests</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">edu.ecnu.sei.junit.recap</a> &gt; <span class="el_source">AssertThatBuildInMatchers.java</span></div><h1>AssertThatBuildInMatchers.java</h1><pre class="source lang-java linenums">package edu.ecnu.sei.junit.recap;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertThat;
+
+import static edu.ecnu.sei.junit.recap.LessThanOrEqual.lessThanOrEqual;
+
+<span class="nc" id="L9">public class AssertThatBuildInMatchers {</span>
+	
+	@Test
+	public void lessthanOrEquals_custom_matcher() throws Exception{
+		
+<span class="nc" id="L14">		int actualage = 42;</span>
+<span class="nc" id="L15">		assertThat(actualage,lessThanOrEqual(45));</span>
+<span class="nc" id="L16">		assertThat(actualage,lessThanOrEqual(42));</span>
+		
+<span class="nc" id="L18">		double actualPI = 3.14;</span>
+<span class="nc" id="L19">		assertThat(actualPI,lessThanOrEqual(3.1415));</span>
+<span class="nc" id="L20">		assertThat(actualPI,lessThanOrEqual(3.14));</span>
+		
+<span class="nc" id="L22">		String actualName = &quot;Sun&quot;;</span>
+<span class="nc" id="L23">		assertThat(actualName,lessThanOrEqual(&quot;Ying&quot;));</span>
+<span class="nc" id="L24">		assertThat(actualName,lessThanOrEqual(&quot;Sun&quot;));		</span>
+		
+<span class="nc" id="L26">	}</span>
+	
+	@Test
+	public void compare_with_Maximum_Value() throws Exception{
+		
+<span class="nc" id="L31">		int actual_max = Integer.MAX_VALUE + 1;		</span>
+<span class="nc" id="L32">		assertThat(actual_max ,lessThanOrEqual(Integer.MAX_VALUE));</span>
+		
+<span class="nc" id="L34">	}</span>
+	
+	@Test
+	public void compare_with_Minimal_Value() throws Exception{
+		
+<span class="nc" id="L39">		int actual_min = Integer.MIN_VALUE +1 ;	</span>
+<span class="nc" id="L40">		assertThat(actual_min,lessThanOrEqual(Integer.MIN_VALUE));		</span>
+<span class="nc" id="L41">	}		</span>
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>InterestingCoverageMetricInstruction (2018-11-16 12:42:03)</div></body></html>

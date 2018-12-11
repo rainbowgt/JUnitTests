@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>OrderedTests.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">InterestingCoverageMetricTest (2018-11-8 15:16:01)</a> &gt; <a href="../../index.html" class="el_group">JUnitTests</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">edu.ecnu.sei.junit.recap</a> &gt; <span class="el_source">OrderedTests.java</span></div><h1>OrderedTests.java</h1><pre class="source lang-java linenums">package edu.ecnu.sei.junit.recap;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+import org.junit.FixMethodOrder;
+
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+<span class="nc" id="L8">public class OrderedTests {</span>
+	
+	@Test
+	public void edit() throws Exception{
+<span class="nc" id="L12">		System.out.println(&quot;Edit executed&quot;);</span>
+<span class="nc" id="L13">	}</span>
+	
+	@Test
+	public void create() throws Exception{
+<span class="nc" id="L17">		System.out.println(&quot;Create exectued&quot;);		</span>
+<span class="nc" id="L18">	}</span>
+	
+	@Test
+	public void remove() throws Exception{
+<span class="nc" id="L22">		System.out.println(&quot;Remove executed&quot;);</span>
+<span class="nc" id="L23">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>InterestingCoverageMetricTest (2018-11-8 15:16:01)</div></body></html>

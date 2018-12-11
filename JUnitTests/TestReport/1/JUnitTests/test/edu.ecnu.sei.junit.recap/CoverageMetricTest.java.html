@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CoverageMetricTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">InterestingCoverageMetricInstruction (2018-11-16 12:42:03)</a> &gt; <a href="../../index.html" class="el_group">JUnitTests</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">edu.ecnu.sei.junit.recap</a> &gt; <span class="el_source">CoverageMetricTest.java</span></div><h1>CoverageMetricTest.java</h1><pre class="source lang-java linenums">package edu.ecnu.sei.junit.recap;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+<span class="nc" id="L8">public class CoverageMetricTest {</span>
+
+	private CoverageMetric cm;
+	
+	@Before
+	public void init() {
+<span class="nc" id="L14">		cm = new CoverageMetric();</span>
+<span class="nc" id="L15">	}</span>
+	
+	@Test
+	public void op1_is_null_and_op2_is_null() {
+		 
+<span class="nc" id="L20">		Integer op1 = null;</span>
+<span class="nc" id="L21">		Integer op2 = null;</span>
+<span class="nc" id="L22">		int ExpectedRlt = 0;</span>
+		
+<span class="nc" id="L24">		int actualRlt = cm.absSum(op1, op2);</span>
+		
+<span class="nc" id="L26">		assertEquals(ExpectedRlt,actualRlt);</span>
+<span class="nc" id="L27">	}</span>
+	
+	@Test
+	public void op1_is_null_but_op2_isnot_null() {
+<span class="nc" id="L31">		Integer op1 = null;</span>
+<span class="nc" id="L32">		Integer op2 = new Integer(&quot;5&quot;);</span>
+<span class="nc" id="L33">		int ExpectedRlt = 5;</span>
+		
+<span class="nc" id="L35">		int actualRlt = cm.absSum(op1, op2);</span>
+		
+<span class="nc" id="L37">		assertEquals(ExpectedRlt,actualRlt);</span>
+<span class="nc" id="L38">	}</span>
+	
+	@Test
+	public void op1_isnot_null_and_op2_is_null() {
+		
+<span class="nc" id="L43">		Integer op1 = new Integer(&quot;10&quot;);</span>
+<span class="nc" id="L44">		Integer op2 = null ;</span>
+<span class="nc" id="L45">		int ExpectedRlt = 10;</span>
+		
+<span class="nc" id="L47">		int actualRlt = cm.absSum(op1, op2);</span>
+		
+<span class="nc" id="L49">		assertEquals(ExpectedRlt,actualRlt);</span>
+		
+<span class="nc" id="L51">	}</span>
+		
+	@Test
+	public void op1_isnot_null_and_op2_isnot_null() {
+		
+<span class="nc" id="L56">		Integer op1 = new Integer(&quot;10&quot;);</span>
+<span class="nc" id="L57">		Integer op2 = new Integer(&quot;5&quot;);</span>
+<span class="nc" id="L58">		int ExpectedRlt = 15;</span>
+		
+<span class="nc" id="L60">		int actualRlt = cm.absSum(op1, op2);</span>
+		
+<span class="nc" id="L62">		assertEquals(ExpectedRlt,actualRlt);</span>
+		
+<span class="nc" id="L64">	}</span>
+}
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>InterestingCoverageMetricInstruction (2018-11-16 12:42:03)</div></body></html>

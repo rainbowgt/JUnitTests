@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>VerfierRuleTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">BranchExampleTest (2018-10-31 9:48:33)</a> &gt; <a href="../../index.html" class="el_group">JUnitTests</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">edu.ecnu.sei.junit.recap</a> &gt; <span class="el_source">VerfierRuleTest.java</span></div><h1>VerfierRuleTest.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">package edu.ecnu.sei.junit.recap;</span>
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestRule;
+import org.junit.rules.Verifier;
+import org.junit.Assert;
+
+<span class="nc" id="L9">public class VerfierRuleTest {</span>
+	
+<span class="nc" id="L11">	private String errorMsg = null;</span>
+	
+	@Rule
+<span class="nc" id="L14">	public TestRule rule = new Verifier() {</span>
+	
+	protected void verify() {
+<span class="nc" id="L17">		Assert.assertNull(&quot;ErrorMsg should be null after each test execution&quot;, errorMsg);</span>
+<span class="nc" id="L18">	 }</span>
+	};
+	
+	@Test
+	public void learn_verifier_rule() throws Exception{
+<span class="nc" id="L23">		errorMsg = &quot;Giving a value&quot;;</span>
+<span class="nc" id="L24">	}</span>
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>BranchExampleTest (2018-10-31 9:48:33)</div></body></html>

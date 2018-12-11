@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CoverageMetricCompiled.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">BranchExampleTest (2018-10-31 9:48:33)</a> &gt; <a href="../../index.html" class="el_group">JUnitTests</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.ecnu.sei.junit.recap</a> &gt; <span class="el_source">CoverageMetricCompiled.java</span></div><h1>CoverageMetricCompiled.java</h1><pre class="source lang-java linenums">package edu.ecnu.sei.junit.recap;
+
+<span class="nc" id="L3">public class CoverageMetricCompiled {</span>
+
+<span class="nc" id="L5">	int[] visitedLines = new int[14];</span>
+	
+	public int absSumModified(Integer op1,Integer op2) {
+		
+<span class="nc" id="L9">		visitedLines[0] = 1;</span>
+		
+<span class="nc bnc" id="L11" title="All 2 branches missed.">		if(op1 == null) {</span>
+<span class="nc" id="L12">		  visitedLines[1] = 1;</span>
+<span class="nc bnc" id="L13" title="All 2 branches missed.">		  if(op2 == null) {</span>
+<span class="nc" id="L14">			visitedLines[2] = 1;</span>
+<span class="nc" id="L15">			return 0;</span>
+		   }else{
+<span class="nc" id="L17">			   visitedLines[3] = 0;</span>
+			}
+<span class="nc" id="L19">		 }else {</span>
+<span class="nc" id="L20">		   visitedLines[4] = 1;</span>
+		}
+		
+<span class="nc" id="L23">		visitedLines[5] = 1;</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">		if (op1 == null) {</span>
+<span class="nc" id="L25">			visitedLines[6] = 1;</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">			if(op2 !=null) {</span>
+<span class="nc" id="L27">				visitedLines[7] = 1;</span>
+<span class="nc" id="L28">				return Math.abs(op2);</span>
+			}else {
+<span class="nc" id="L30">				visitedLines[8] = 1;</span>
+			}
+<span class="nc" id="L32">		}else {</span>
+<span class="nc" id="L33">			visitedLines[9] = 0;</span>
+		}
+		
+<span class="nc" id="L36">		visitedLines[10] = 1;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">		if(op2 == null) {</span>
+<span class="nc" id="L38">			visitedLines[11] = 1;</span>
+<span class="nc" id="L39">			return Math.abs(op1);</span>
+		}else {
+<span class="nc" id="L41">			visitedLines[12] = 1;</span>
+		}
+<span class="nc" id="L43">		visitedLines[13] =1;</span>
+<span class="nc" id="L44">		return Math.abs(op1) + Math.abs(op2);</span>
+		
+	}
+}
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>BranchExampleTest (2018-10-31 9:48:33)</div></body></html>

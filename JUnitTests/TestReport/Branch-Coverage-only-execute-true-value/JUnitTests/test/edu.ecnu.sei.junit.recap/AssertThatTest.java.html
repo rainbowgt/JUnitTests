@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AssertThatTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">BranchExampleTest (2018-10-31 9:48:33)</a> &gt; <a href="../../index.html" class="el_group">JUnitTests</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">edu.ecnu.sei.junit.recap</a> &gt; <span class="el_source">AssertThatTest.java</span></div><h1>AssertThatTest.java</h1><pre class="source lang-java linenums">package edu.ecnu.sei.junit.recap;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.either;
+import static org.hamcrest.CoreMatchers.both;
+import static org.hamcrest.CoreMatchers.anyOf;
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.hasItems;
+
+import static org.hamcrest.CoreMatchers.startsWith;
+import static org.hamcrest.CoreMatchers.endsWith;
+import static org.hamcrest.CoreMatchers.containsString;
+
+import static edu.ecnu.sei.junit.recap.LessThanOrEqual.lessThanOrEqual;
+
+
+
+import org.junit.Test;
+
+<span class="nc" id="L28">public class AssertThatTest {</span>
+	
+	@Test
+	public void verify_Matcher() throws Exception{
+		
+<span class="nc" id="L33">		int age = 30;</span>
+		//int age = 29;
+		
+<span class="nc" id="L36">		assertThat(age,equalTo(30));</span>
+<span class="nc" id="L37">		assertThat(age,is(30));</span>
+		
+<span class="nc" id="L39">		assertThat(age,not(equalTo(33)));</span>
+<span class="nc" id="L40">		assertThat(age,is(not(33)));</span>
+		
+<span class="nc" id="L42">	}</span>
+	
+	
+	@Test
+	public void verify_multiple_values() throws Exception{
+		
+<span class="nc" id="L48">		double marks = 100.00;</span>
+		
+<span class="nc" id="L50">		assertThat(marks,either(is(100.00)).or(is(90.9)));</span>
+<span class="nc" id="L51">		assertThat(marks,both(not(99.99)).and(not(60.00)));</span>
+<span class="nc" id="L52">		assertThat(marks,anyOf(is(100.00),is(1.00),is(55.00),is(88.00),is(67.8)));</span>
+<span class="nc" id="L53">		assertThat(marks,not(anyOf(is(0.00),is(200.00))));</span>
+<span class="nc" id="L54">		assertThat(marks,not(allOf(is(1.00),is(100.00),is(30.00))));</span>
+		
+<span class="nc" id="L56">	}</span>
+	
+	@Test
+	public void verify_collection_values() throws Exception{
+		
+<span class="nc" id="L61">		List&lt;Double&gt; salary = Arrays.asList(50.00,200.0,500.0);</span>
+		
+<span class="nc" id="L63">		assertThat(salary,hasItem(50.00));</span>
+<span class="nc" id="L64">		assertThat(salary,hasItems(50.00,200.00));</span>
+<span class="nc" id="L65">		assertThat(salary,not(hasItem(1.00)));</span>
+		
+		
+<span class="nc" id="L68">	}</span>
+	
+	@Test
+	public void verify_Strings() throws Exception{
+		
+<span class="nc" id="L73">		String name = &quot;Sun Hai Ying&quot;;</span>
+		
+<span class="nc" id="L75">		assertThat(name,startsWith(&quot;Su&quot;));</span>
+<span class="nc" id="L76">		assertThat(name, endsWith(&quot;ng&quot;));</span>
+<span class="nc" id="L77">		assertThat(name, containsString(&quot; Hai&quot;));</span>
+<span class="nc" id="L78">	}</span>
+
+	@Test
+	public void verify_self_builded_matcher_pass() throws Exception{
+		
+<span class="nc" id="L83">		int actualGoalScored = 2;</span>
+<span class="nc" id="L84">		assertThat(actualGoalScored,lessThanOrEqual(4));</span>
+<span class="nc" id="L85">		assertThat(actualGoalScored,lessThanOrEqual(2));	</span>
+				
+<span class="nc" id="L87">		double pi = 3.14;</span>
+<span class="nc" id="L88">		assertThat(pi,lessThanOrEqual(4.00));</span>
+		
+<span class="nc" id="L90">		String name = &quot;shy&quot;;</span>
+<span class="nc" id="L91">		assertThat(name,lessThanOrEqual(&quot;xyz&quot;));</span>
+<span class="nc" id="L92">	}</span>
+	
+	@Test
+	public void verfiy_self_builded_matcher_fail() throws Exception{
+		
+<span class="nc" id="L97">		int maxInt = Integer.MAX_VALUE;</span>
+<span class="nc" id="L98">		assertThat(maxInt,lessThanOrEqual(Integer.MIN_VALUE));</span>
+<span class="nc" id="L99">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>BranchExampleTest (2018-10-31 9:48:33)</div></body></html>
