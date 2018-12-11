@@ -11,5 +11,8 @@ public class BranchExample {
 			
 		
 	}
-
+   
+	public int foo() {
+		return 0;
+	}
 }
